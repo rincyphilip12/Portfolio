@@ -1,0 +1,176 @@
+ #import “ ~ _variables.scss”{}
+
+.timeline-container {
+  width: 100vw;
+  height: 100vh;
+}
+canvas {
+  z-index: 100;
+}
+
+.svg-wrapper {
+  position: relative;
+  height: 90vh;
+  background: url("../../assets/timeline.svg");
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100vw;
+  // &.right {
+  //   animation: backdrop-right 10s linear forwards;
+  // }
+  // &.left {
+  //   animation: backdrop-left 10s linear forwards;
+  // }
+  &.walk {
+    animation-play-state: running;
+  }
+  &.halt {
+    animation-play-state: paused;
+  }
+}
+
+.pathway {
+  position: fixed;
+  bottom: 0;
+  height: 10%;
+  width: 100vw;
+  z-index: 100;
+  background-color: black;
+}
+// @keyframes bgmove {
+//   from {
+//     transform: translateX(0px);
+//   }
+//   to {
+//     transform: translateX(1000px);
+//   }
+// }
+
+// .walk-container {
+//     display: inline-block;
+//     position: absolute;
+//     width: auto;
+//     height: 100px;
+//     bottom: 10%;
+//     // padding-bottom: 30%;
+//     z-index: 20;
+//     animation: stroll 1s linear infinite;
+//     vertical-align: middle;
+// }
+//strollright 10s linear infinite;
+.walk-container {
+  display: inline-block;
+  position: absolute;
+  left: 50%;
+  bottom: 8%;
+  z-index: 20;
+  width: 60px;
+  height: 150px;
+  background-image: url("../../assets/WalkingMan.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  animation: walkanim 1s steps(7) infinite;
+  &.right {
+    animation: walkanim 1s steps(7) infinite;
+  }
+  &.left {
+    animation: walkanim 1s steps(7) infinite, flip 0.00001s linear forwards;
+  }
+  &.walk {
+    animation-play-state: running;
+  }
+  &.halt {
+    animation-play-state: paused;
+  }
+}
+
+@keyframes flip {
+  from {
+    transform: scale(1, 1);
+  }
+  to {
+    transform: scale(-1, 1);
+  }
+}
+@keyframes walkanim {
+  from {
+    background-position-x: 0px;
+  }
+  to {
+    background-position-x: -696px;
+  }
+}
+// @keyframes strollright {
+//   from {
+//     transform: translateX(0px);
+//   }
+//   to {
+//     transform: translateX(200px);
+//   }
+// }
+
+// @keyframes strollleft {
+//   from {
+//     transform: translateX(0px);
+//   }
+//   to {
+//     transform: translateX(200px);
+//   }
+// }
+@keyframes backdrop-right {
+  from {
+    background-position-x: 0%;
+  }
+  to {
+    background-position-x: 100%;
+  }
+}
+
+@keyframes backdrop-left {
+  from {
+    background-position-x: 100%;
+  }
+  to {
+    background-position-x: 0%;
+  }
+}
+.loading-message {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: rgba(10,25,47,0.8);
+  width: 100%;
+  height: 100%;
+  color:#895061;
+  p{
+    font-family: Calibre, "San Francisco", "SF Pro Text", -apple-system,
+      system-ui, BlinkMacSystemFont, Roboto, "Helvetica Neue", "Segoe UI", Arial,
+      sans-serif;
+      font-size:3em;
+     
+
+  }
+  .keyes{
+    margin:0 auto;
+  }
+  .key-left {
+    margin-right: 10px;
+  }
+  .bi-hand-index {
+    transform: rotate(50deg);
+    // animation: movehand 5s alternate infinite;
+  }
+svg{
+  animation: scalesvg 2s linear infinite;
+}
+  @keyframes scalesvg {
+    0% {
+      transform: scale(0.90);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+}

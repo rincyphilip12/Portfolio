@@ -1,0 +1,123 @@
+#import “ ~ _variables.scss” {
+}
+
+.grid-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  &.testimonials{
+    // background: linear-gradient(to bottom, #6e529d 0%,#d97b93 100%), 
+    // background: #355C7D;  /* fallback for old browsers */
+    // background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+    // background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    
+//     background: #642B73;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #C6426E, #642B73);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #C6426E, #642B73); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+// background-color: #4c4177;
+// background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+
+  }
+  &.home{
+    opacity:0.8;
+  }
+}
+
+.grid-item {
+  position: relative;
+  // background: repeating-linear-gradient(
+  //     to bottom,
+  //     #0a192f,
+  //     #0a192f 1px,
+  //     #010407 1.2px,
+  //     #010407
+  //   );
+  width: 12.5%;
+  height: 12.5%;
+  flex-grow: 1;
+  overflow: hidden;
+  background-size: 100% 2.8px;
+  //   animation: scanline 0.1ms linear infinite;
+  .bits {
+    animation: flicker 1s linear infinite;
+    position: absolute;
+    border-radius: 50%;
+    display: inline-block;
+    // top:random($limit:100) + vh;
+    // left:random($limit:100)  +vh;
+  }
+}
+.home .grid-item {
+  background-color:rgb(10, 25, 47);
+  //   background: repeating-linear-gradient(
+  //     0deg,
+  //       #0a192f,
+  // #0a192f 1px,
+  // #010407 1px,
+  // #010407 3px
+    
+  //   );
+  }
+  //   #0a192f,
+  // #0a192f 2px,
+  // #010407 2px,
+  // #010407 3px
+  .testimonials .grid-item  {
+    transform-origin: center!important;
+    border: 1px solid rgba(255,255,255,.1);
+    // width: 10em;
+    // height: 10em;
+    // transform: rotate(45deg);
+    // margin: 2em;
+    // float: left;
+//     background: #355C7D;  /* fallback for old browsers */
+// background: -webkit-linear-gradient(to right, #C06C84, #6C5B7B, #355C7D);  /* Chrome 10-25, Safari 5.1-6 */
+// background: linear-gradient(to right, #C06C84, #6C5B7B, #355C7D); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background:linear-gradient(135deg, rgba(255,255,255,0.05) 0%,rgba(0,0,0,0.05) 100%); 
+  }
+  // &.timeline {
+  //   background-color: var(--theme-bg);
+  // }
+
+
+$colors: #59253a, #78244c, #895061, #0677a1, #2d4159, rgb(250, 250, 250);
+
+@for $i from 0 to 65 {
+  .grid-wrap .grid-item.home:nth-child(#{$i}) .bits {
+    $circum: random(10);
+    //this should randomize by percent up to 100% (20%, 45%, 77%, ...)
+    width: #{$circum} + px;
+    height: #{$circum} + px;
+    left: random(90) / 100 * 100%;
+    top: random(90) / 100 * 100%;
+    background: lighten(nth($colors, random(length($colors))), 20%);
+    //this should randomize opacity (0.5, 0.7, 0.9, ...)
+    // opacity: random(10) / 10;
+    // animation: flicker-#{$i} #{random(3)}s linear infinite;
+  }
+
+  // @keyframes flicker-#{$i} {
+  //   $r: random(100);
+
+  //   #{$r}% {
+  //     opacity: $r / 100;
+  //   }
+  // }
+
+  .grid-wrap.timeline .grid-item:nth-child(#{$i}){
+      background-color:adjust-color(#0a192f, $red : ( ceil( $i /  8)  * 10%));
+    
+      // background-color:adjust-color(#772c28, $red : ( ceil( $i /  8)  * 7%));
+  }
+
+  .grid-wrap.testimonials .grid-item:nth-child(#{$i}){
+    background-color:adjust-color(#2a5470, $red : ( ceil( $i /  9)  * 10%));
+    // background-color: #4c4177;
+    // background-image: linear-gradient(315deg, #4c4177 0%, #2a5470 74%);
+    // background-color:adjust-color(#59253a, $red : ( ceil( $i /  8)  * 7%));
+}
+}

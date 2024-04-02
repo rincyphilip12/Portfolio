@@ -1,0 +1,259 @@
+// @import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+// @import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+// body {
+// 	font-family: 'Indie Flower', cursive !important;
+//   background: #FDE3A7; /*CAPE HONEY*/
+// 	margin: 0px;
+// 	padding: 0px;
+// }
+
+// ::selection {
+// 	background: transparent;
+// }
+
+// h4 {
+// 	font-size: 26px;
+// 	line-height: 1px;
+// 	font-family: 'Amatic SC', cursive !important;
+// }
+
+// .color1{color:#1BBC9B}/*MOUNTAIN MEADOW*/
+// .color2{color:#C0392B/*TALL POPPY*/}
+
+// .card {
+// 	color: #013243; /*SHERPA BLUE*/
+// 	position: absolute;
+// 	top: 50%;
+// 	left: 50%;
+// 	width: 300px;
+// 	height: 400px;
+// 	background: #e0e1dc;
+// 	transform-style: preserve-3d;
+// 	transform: translate(-50%,-50%) perspective(2000px);
+// 	box-shadow: inset 300px 0 50px rgba(0,0,0,.5), 20px 0 60px rgba(0,0,0,.5);
+// 	transition: 1s;
+// }
+
+// .card:hover {
+// 	transform: translate(-50%,-50%) perspective(2000px) rotate(15deg) scale(1.2);
+// 	box-shadow: inset 20px 0 50px rgba(0,0,0,.5), 0 10px 100px rgba(0,0,0,.5);
+// }
+
+// .card:before {
+// 	content:'';
+// 	position: absolute;
+// 	top: -5px;
+// 	left: 0;
+// 	width: 100%;
+// 	height: 5px;
+// 	background: #BAC1BA;
+// 	transform-origin: bottom;
+// 	transform: skewX(-45deg);
+// }
+
+// .card:after {
+// 	content: '';
+// 	position: absolute;
+// 	top: 0;
+// 	right: -5px;
+// 	width: 5px;
+// 	height: 100%;
+// 	background: #92A29C;
+// 	transform-origin: left;
+// 	transform: skewY(-45deg);
+// }
+
+// .card .imgBox {
+// 	width: 100%;
+// 	height: 100%;
+// 	position: relative;
+// 	transform-origin: left;
+// 	transition: .7s;
+// }
+
+// .card .bark {
+// 	position: absolute;
+// 	background: #e0e1dc;
+// 	width: 100%;
+// 	height: 100%;
+// 	opacity: 0;
+// 	transition: .7s;
+// }
+
+// .card .imgBox img {
+// 	min-width: 250px;
+// 	max-height: 400px;
+// }
+
+// .card:hover .imgBox {
+// 	transform: rotateY(-135deg);
+// }
+
+// .card:hover .bark {
+// 	opacity: 1;
+// 	transition: .6s;
+//   box-shadow: 300px 200px 100px rgba(0, 0, 0, .4) inset;
+// }
+
+// .card .details {
+// 	position: absolute;
+// 	top: 0;
+// 	left: 0;
+// 	box-sizing: border-box;
+// 	padding: 0 0 0 10px;
+// 	z-index: -1;
+// 	margin-top: 70px;
+// }
+
+// .card .details p {
+// 	font-size: 15px;
+// 	line-height: 5px;
+// 	transform: rotate(-10deg);
+// 	padding: 0 0 0 20px;
+// }
+
+// .card .details h4 {
+// 	text-align: center;
+// }
+
+// .text-right {
+// 	text-align: right;
+// }
+
+// *:not(.mouse-active){
+//   cursor: none;
+
+// @import url('https://fonts.googleapis.com/css2?family=Stylish&display=swap');
+// }
+$n: 5;
+$w: 15em;
+$h: $w * 1.5;
+$starta: 45deg;
+$a: $starta/$n;
+// $imgs:
+//   'https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/571/overrides/cheetah-cub-melon-990_57130_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/057/cache/african-elephant-record_5790_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/006/cache/red-panda_680_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/275/cache/asiatic-leopard-cub_27528_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/007/cache/snow-leopard_712_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/275/cache/mom-tiger-licking-cub_27537_600x450.jpg'
+//   'http://images.nationalgeographic.com/wpf/media-live/photos/000/275/cache/leopard-cub-lying-on-ground_27530_600x450.jpg';
+$len: 5;
+
+.testimonials-container {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 10;
+  display: flex;
+}
+.trap {
+  height: 100%;
+  z-index: 100;
+}
+
+// p {
+//   position: absolute;
+//   z-index: -1;
+//   padding: 1em;
+//   color: black;
+//   font: 1.25em trebuchet ms, century gothis, verdana, sans-serif;
+//   pointer-events: none;
+// }
+// $n: 5;
+// $w: 15em;
+// $h: $w * 1.5;
+// $starta: 45deg;
+// $a: $starta/$n;
+
+.trap {
+  float: left;
+  width: 100%/ ($n);
+  @for $i from 0 to $n + 1 {
+    &:nth-child(#{$i + 1}):hover ~ .book .page {
+      @for $j from 0 to $n {
+        &:nth-child(#{$j + 1}) {
+          @if $j < $i {
+            //z-index: (-($i - $j) + 1)*$n;
+            transform: rotateY(-180deg + $starta - ($i - $j) * $a);
+          } @else {
+            //z-index: ($i - $j)*$n;
+            transform: rotateY(-($i - $j) * $a - $starta);
+          }
+        }
+      }
+    }
+  }
+}
+
+.book,
+.book *,
+.book :before,
+.book :after {
+  box-sizing: border-box;
+  position: absolute;
+  transform-style: preserve-3d;
+}
+
+.book {
+  // z-index: -1;
+  top: 50%;
+  left: 50%;
+  perspective: 40em;
+  // pointer-events: none;
+}
+
+.page {
+  top: 50%;
+  left: 50%;
+  margin: -$h/2 0;
+  width: $w;
+  height: $h;
+  transform-origin: 0 50%;
+  border-radius: 0 0.5em 0.5em 0;
+  background: linear-gradient(to top left, #3a6186, #89253e);
+  transition: 0.5s;
+  color: white;
+  opacity: 0.9;
+  &.cover {
+
+  }
+  &:before,
+  &:after {
+    width: inherit;
+    height: inherit;
+    border-radius: 0 0.5em 0.5em 0;
+    backface-visibility: hidden;
+    background-position: 100% 0;
+    background-size: 200% 100%;
+    box-shadow: inset -0.125em 0 0.5em white;
+    content: "";
+  }
+  &:after {
+    border-radius: 0.5em 0 0 0.5em;
+    transform: rotateY(180deg);
+    background-position: 0 0;
+    opacity: 0.99;
+  }
+  p {
+    font-size: 0.6em;
+    padding: 2em;
+    display: block;
+    font-family: "Roboto Mono", monospace;
+  }
+  @for $i from 0 to $n {
+    &:nth-child(#{$i + 1}) {
+      z-index: -$i;
+      // &:before {
+      //   box-shadow: inset -0.125em 0 0.5em hsl($i * 360 / $n, 100%, 70%);
+      //   // background-color:white;
+      // }
+      // &:after {
+      //   box-shadow: inset 0.125em 0 0.5em hsl(($i + 1) * 360 / $n, 100%, 70%);
+      //   // background-color:white;
+      // }
+    }
+  }
+}

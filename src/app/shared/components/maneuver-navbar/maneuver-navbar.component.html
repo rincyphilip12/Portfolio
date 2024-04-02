@@ -1,0 +1,19 @@
+
+<!-- <div class="dot" *ngIf = "isClicked" [style.transform] = "'translate('+left+'px,'+top+'px)'" >
+
+</div> -->
+<div class="menuContainer" [style.transform]="'translate('+menuLeft+'px,'+menuTop+'px)'"  >
+  <span class="menuTitle"  >menu</span>
+<!-- 
+[style.top.px]="menuTop"
+[style.left.px]="menuLeft"
+-->
+
+  <div class="menu" [style.z-index] = "(isClicked )? '1009':'1011' "> 
+    <ul [hidden]="!isClicked">
+      <li *ngIf = "currentRoute != 'home'" (click) = "goToPage('home')"><a >home</a></li>
+      <li *ngIf = "currentRoute != 'timeline'" (click) = "goToPage('timeline')"><a >timeline</a></li>
+      <li *ngIf = "currentRoute != 'testimonials'" (click) = "goToPage('testimonials')"><a >testimonials</a></li>
+    </ul>
+  </div>
+</div>
