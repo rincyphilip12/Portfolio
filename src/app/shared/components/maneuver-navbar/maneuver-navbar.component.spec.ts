@@ -1,4 +1,4 @@
-import { async, ComponentFixture, TestBed } from '@angular/core/testing';
+import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 
 import { ManeuverNavbarComponent } from './maneuver-navbar.component';
 
@@ -6,7 +6,7 @@ describe('ManeuverNavbarComponent', () => {
   let component: ManeuverNavbarComponent;
   let fixture: ComponentFixture<ManeuverNavbarComponent>;
 
-  beforeEach(async(() => {
+  beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
       declarations: [ ManeuverNavbarComponent ]
     })
